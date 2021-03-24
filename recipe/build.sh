@@ -8,7 +8,7 @@ cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS
 make
 make test
 cp -v analisi "$PREFIX/bin/analisi_serial"
-cp -v pyanalisi*.so "$SP_DIR/pyanalisi.so"
+cp -v pyanalisi*.so "$SP_DIR/"
 
 cd ../
 mkdir build_mpi
