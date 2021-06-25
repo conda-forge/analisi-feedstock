@@ -1,5 +1,5 @@
 {% set name = "analisi" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 082a00b3c4f358d8a898302661d2611b1dfa60b9aac02dcb19700f8b44f7ea19
+  sha256: 44bcd76c7e5b9133c938ddbf9b4c9e4e42f4bdd9ca5d0eefd39da64df5882a82
 
 build:
   number: {{ build }}
-  skip: True  # [not linux]
+  skip: True  # [win]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ mpi }}_{{ build }}
 
 requirements:
@@ -34,6 +34,9 @@ requirements:
     - fftw
     - boost-cpp
     - xdrfile
+    - matplotlib
+    - numpy
+    - scipy
 
 test:
   imports:
