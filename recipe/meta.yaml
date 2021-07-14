@@ -1,6 +1,6 @@
 {% set name = "analisi" %}
-{% set version = "0.3.0" %}
-{% set build = 1 %}
+{% set version = "3.1" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 44bcd76c7e5b9133c938ddbf9b4c9e4e42f4bdd9ca5d0eefd39da64df5882a82
+  sha256: 722199a6c7a4178406f71d0a49c982cc949134f2f4f492cf032308ccf269ef73
 
 build:
   number: {{ build }}
-  skip: True  # [win]
+  skip: true  # [win]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ mpi }}_{{ build }}
 
 requirements:
@@ -53,15 +53,15 @@ about:
   home: https://github.com/rikigigi/analisi
   license: GPL-2.0-or-later
   license_file:
-     - LICENSE
+    - LICENSE
 
   summary: 'analisi: your Swiss Army Knife of molecular dynamics analysis'
   description: |
-     analisi is a framework for analyzing molecular dynamics simulations.
-     It can read lammps's binary format (other formats can be converted)
-     and evaluate averages over the ergodic and equilibrated trajectory. 
-     Very heavy calculation can be performed in a parallel way using 
-     MPI, while multithreading is implemented also in the python interface.
+    analisi is a framework for analyzing molecular dynamics simulations.
+    It can read lammps's binary format (other formats can be converted)
+    and evaluate averages over the ergodic and equilibrated trajectory. 
+    Very heavy calculation can be performed in a parallel way using 
+    MPI, while multithreading is implemented also in the python interface.
 
   dev_url: https://github.com/rikigigi/analisi
 
