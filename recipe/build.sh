@@ -12,7 +12,7 @@ cp -v analisi "$PREFIX/bin/analisi_serial"
 cp -v ../tools/cp2analisi.py "$PREFIX/bin/cp2analisi"
 cp -v ../tools/lammps2analisi.py "$PREFIX/bin/lammps2analisi"
 "$SOURCE_DIR/install/install_python.sh" #copy library in SP_DIR
-cd "$SOURCE_Dd7445184afd3891bcd6f286e75e78bc6e7fe130bd7445184afd3891bcd6f286e75e78bc6e7fe130bIR/tests"
+cd "$SOURCE_DIR/tests"
 pytest -sv .
 ./test_cli.sh
 
