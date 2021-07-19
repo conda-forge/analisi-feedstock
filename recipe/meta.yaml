@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 722199a6c7a4178406f71d0a49c982cc949134f2f4f492cf032308ccf269ef73
+  sha256: 9db15293f0515728ef83db7fedcd89a2dd5abeccdb3e11d79f97bc5c8e287200
 
 build:
   number: {{ build }}
