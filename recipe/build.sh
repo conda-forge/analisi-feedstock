@@ -1,21 +1,20 @@
 #!/bin/bash
 
 ARGS="-DSYSTEM_FFTW3=ON -DSYSTEM_EIGEN3=ON -DSYSTEM_BOOST=ON -DSYSTEM_XDRFILE=ON"
-
+export SOURCE_DIR=`pwd`
 mkdir build_serial
 cd build_serial
 cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS
 make
+export BUILD_DIR=`pwd`
 make test
 cp -v analisi "$PREFIX/bin/analisi_serial"
-mkdir -p "$SP_DIR/pyanalisi"
-cp -v pyanalisi*.so "$SP_DIR/pyanalisi"
-cp -v ../notebooks/common.py "$SP_DIR/pyanalisi"
-echo 'from pyanalisi.pyanalisi import *
-from pyanalisi.common import *
-' > "$SP_DIR/pyanalisi/__init__.py"
 cp -v ../tools/cp2analisi.py "$PREFIX/bin/cp2analisi"
 cp -v ../tools/lammps2analisi.py "$PREFIX/bin/lammps2analisi"
+"$SOURCE_DIR/install/install_python.sh" #copy library in SP_DIR
+cd "$SOURCE_Dd7445184afd3891bcd6f286e75e78bc6e7fe130bd7445184afd3891bcd6f286e75e78bc6e7fe130bIR/tests"
+pytest -sv .
+./test_cli.sh
 
 cd ../
 mkdir build_mpi
