@@ -21,9 +21,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
-    - pytest
-    - pandas
-    - pytest-regressions
   host:
     - python
     - {{ mpi }}
@@ -44,6 +41,12 @@ requirements:
 test:
   imports:
     - pyanalisi
+  requires:
+    - pytest
+    - pandas
+    - pytest-regressions
+  source_files:
+    - tests
   commands:
     - export OMPI_MCA_plm=isolated                          # [mpi == "openmpi"]
     - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [mpi == "openmpi"]
@@ -52,6 +55,7 @@ test:
     - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
     - analisi_serial
     - mpiexec -n 1 analisi
+    - pytest -v tests
 about:
   home: https://github.com/rikigigi/analisi
   license: GPL-2.0-or-later

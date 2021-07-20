@@ -13,8 +13,6 @@ cp -v ../tools/cp2analisi.py "$PREFIX/bin/cp2analisi"
 cp -v ../tools/lammps2analisi.py "$PREFIX/bin/lammps2analisi"
 "$SOURCE_DIR/install/install_python.sh" #copy library in SP_DIR
 cd "$SOURCE_DIR/tests"
-export PYTHONPATH="$PYTHONPATH:$SP_DIR"
-pytest -sv .
 ./test_cli.sh
 
 cd ../
