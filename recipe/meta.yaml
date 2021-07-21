@@ -1,6 +1,6 @@
 {% set name = "analisi" %}
-{% set version = "0.3.0" %}
-{% set build = 1 %}
+{% set version = "0.3.1" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 44bcd76c7e5b9133c938ddbf9b4c9e4e42f4bdd9ca5d0eefd39da64df5882a82
+  sha256: d8499f7296d98676259ee639e5b44b5484b2227f285c87a1f0c962fe395df604
 
 build:
   number: {{ build }}
-  skip: True  # [win]
+  skip: true  # [win]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ mpi }}_{{ build }}
 
 requirements:
@@ -41,27 +41,34 @@ requirements:
 test:
   imports:
     - pyanalisi
+  requires:
+    - pytest
+    - pandas
+    - pytest-regressions
+  source_files:
+    - tests
   commands:
     - export OMPI_MCA_plm=isolated                          # [mpi == "openmpi"]
     - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [mpi == "openmpi"]
     - export OMPI_MCA_rmaps_base_oversubscribe=yes          # [mpi == "openmpi"]
     - export OMPI_ALLOW_RUN_AS_ROOT=1                       # [mpi == "openmpi"]
     - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
-    - analisi_serial
-    - mpiexec -n 1 analisi
+    - analisi_serial --help
+    - mpiexec -n 1 analisi --help
+    - pytest -v tests
 about:
   home: https://github.com/rikigigi/analisi
   license: GPL-2.0-or-later
   license_file:
-     - LICENSE
+    - LICENSE
 
   summary: 'analisi: your Swiss Army Knife of molecular dynamics analysis'
   description: |
-     analisi is a framework for analyzing molecular dynamics simulations.
-     It can read lammps's binary format (other formats can be converted)
-     and evaluate averages over the ergodic and equilibrated trajectory. 
-     Very heavy calculation can be performed in a parallel way using 
-     MPI, while multithreading is implemented also in the python interface.
+    analisi is a framework for analyzing molecular dynamics simulations.
+    It can read lammps's binary format (other formats can be converted)
+    and evaluate averages over the ergodic and equilibrated trajectory. 
+    Very heavy calculation can be performed in a parallel way using 
+    MPI, while multithreading is implemented also in the python interface.
 
   dev_url: https://github.com/rikigigi/analisi
 
