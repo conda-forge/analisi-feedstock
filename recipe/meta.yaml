@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 9db15293f0515728ef83db7fedcd89a2dd5abeccdb3e11d79f97bc5c8e287200
+  sha256: d8499f7296d98676259ee639e5b44b5484b2227f285c87a1f0c962fe395df604
 
 build:
   number: {{ build }}
@@ -53,8 +53,8 @@ test:
     - export OMPI_MCA_rmaps_base_oversubscribe=yes          # [mpi == "openmpi"]
     - export OMPI_ALLOW_RUN_AS_ROOT=1                       # [mpi == "openmpi"]
     - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
-    - analisi_serial
-    - mpiexec -n 1 analisi
+    - analisi_serial --help
+    - mpiexec -n 1 analisi --help
     - pytest -v tests
 about:
   home: https://github.com/rikigigi/analisi
