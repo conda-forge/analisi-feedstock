@@ -1,5 +1,5 @@
 {% set name = "analisi" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: d8499f7296d98676259ee639e5b44b5484b2227f285c87a1f0c962fe395df604
+  sha256: 10479cc61aac38d442313174c8479a8e974c1baafcef8744a7c53d28e2f3cd15
 
 build:
   number: {{ build }}
