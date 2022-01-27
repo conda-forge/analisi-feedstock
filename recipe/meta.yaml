@@ -1,5 +1,5 @@
 {% set name = "analisi" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: ce6a9949591c592aed6d86f744867b1989e91b4e6813a3e092761ce7d3acc389
+  sha256: 98c8ee583972bfc641ce43eabd02f09b0c2512928d73801f97c8ae03096e5673
 
 build:
   number: {{ build }}
-  skip: true  # [win]
+  skip: true  # [ win or python_impl == 'pypy' ]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ mpi }}_{{ build }}
 
 requirements:
@@ -55,7 +55,7 @@ test:
     - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
     - analisi_serial --help
     - mpiexec -n 1 analisi --help
-    - pytest -v tests
+    - pytest -sv tests
 about:
   home: https://github.com/rikigigi/analisi
   license: GPL-2.0-or-later

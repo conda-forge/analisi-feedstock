@@ -15,11 +15,11 @@ cxx_compiler:
 cxx_compiler_version:
 - '9'
 docker_image:
-- quay.io/condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 fftw:
 - '3'
 mpi:
-- mpich
+- openmpi
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -29,11 +29,13 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.7.* *_73_pypy
+- 3.7.* *_cpython
+python_impl:
+- cpython
 target_platform:
 - linux-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - cdt_name
-  - docker_image
+- - python
+  - python_impl
