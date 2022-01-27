@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: 799892cf83674ed18f0afc86884fc95099ae384952746afccc366628f5010ef3
+  sha256: 98c8ee583972bfc641ce43eabd02f09b0c2512928d73801f97c8ae03096e5673
 
 build:
   number: {{ build }}
@@ -55,7 +55,7 @@ test:
     - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
     - analisi_serial --help
     - mpiexec -n 1 analisi --help
-    - pytest -v tests
+    - pytest -sv tests
 about:
   home: https://github.com/rikigigi/analisi
   license: GPL-2.0-or-later
