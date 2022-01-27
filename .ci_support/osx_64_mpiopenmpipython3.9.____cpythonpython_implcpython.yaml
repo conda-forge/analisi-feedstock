@@ -19,7 +19,7 @@ fftw:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpi:
-- mpich
+- openmpi
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -30,8 +30,12 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.9.* *_cpython
+python_impl:
+- cpython
 target_platform:
 - osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - python
+  - python_impl

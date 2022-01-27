@@ -8,29 +8,23 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_mpimpichpython3.7.____73_pypy:
-        CONFIG: osx_64_mpimpichpython3.7.____73_pypy
+      osx_64_mpimpichpython3.7.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpimpichpython3.7.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichpython3.7.____cpython:
-        CONFIG: osx_64_mpimpichpython3.7.____cpython
+      osx_64_mpimpichpython3.8.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpimpichpython3.8.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichpython3.8.____cpython:
-        CONFIG: osx_64_mpimpichpython3.8.____cpython
+      osx_64_mpimpichpython3.9.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpimpichpython3.9.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichpython3.9.____cpython:
-        CONFIG: osx_64_mpimpichpython3.9.____cpython
+      osx_64_mpiopenmpipython3.7.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpiopenmpipython3.7.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpipython3.7.____73_pypy:
-        CONFIG: osx_64_mpiopenmpipython3.7.____73_pypy
+      osx_64_mpiopenmpipython3.8.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpiopenmpipython3.8.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpipython3.7.____cpython:
-        CONFIG: osx_64_mpiopenmpipython3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpipython3.8.____cpython:
-        CONFIG: osx_64_mpiopenmpipython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpipython3.9.____cpython:
-        CONFIG: osx_64_mpiopenmpipython3.9.____cpython
+      osx_64_mpiopenmpipython3.9.____cpythonpython_implcpython:
+        CONFIG: osx_64_mpiopenmpipython3.9.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
