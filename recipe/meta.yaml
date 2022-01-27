@@ -12,7 +12,7 @@ source:
 
 build:
   number: {{ build }}
-  skip: true  # [win]
+  skip: true  # [ win or python_impl == 'pypy' ]
   string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ mpi }}_{{ build }}
 
 requirements:
