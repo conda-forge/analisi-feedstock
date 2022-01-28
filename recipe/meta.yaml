@@ -1,6 +1,6 @@
 {% set name = "analisi" %}
 {% set version = "0.4.0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -21,6 +21,9 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+
   host:
     - python
     - {{ mpi }}
