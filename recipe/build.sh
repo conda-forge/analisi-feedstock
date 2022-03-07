@@ -1,10 +1,19 @@
 #!/bin/bash
 
 ARGS="-DSYSTEM_FFTW3=ON -DSYSTEM_EIGEN3=ON -DSYSTEM_BOOST=ON -DSYSTEM_XDRFILE=ON"
+
+declare -a CMAKE_PLATFORM_FLAGS
+if [[ ${HOST} =~ .*darwin.* ]]; then
+  CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
+  # export LDFLAGS=$(echo "${LDFLAGS}" | sed "s/-Wl,-dead_strip_dylibs//g")
+else
+  CMAKE_PLATFORM_FLAGS+=(-DCMAKE_TOOLCHAIN_FILE="${RECIPE_DIR}/cross-linux.cmake")
+fi
+
 export SOURCE_DIR=`pwd`
 mkdir build_serial
 cd build_serial
-cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS
+cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS ${CMAKE_PLATFORM_FLAGS[@]}
 make
 export BUILD_DIR=`pwd`
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
@@ -22,7 +31,7 @@ fi
 cd ../
 mkdir build_mpi
 cd build_mpi
-cmake ../ -DCMAKE_CXX_COMPILER=mpicxx -DCMAKE_C_COMPILER=mpicc -DUSE_MPI=ON -DPYTHON_EXECUTABLE="$PYTHON" $ARGS
+cmake ../ -DCMAKE_CXX_COMPILER=mpicxx -DCMAKE_C_COMPILER=mpicc -DUSE_MPI=ON -DPYTHON_EXECUTABLE="$PYTHON" $ARGS ${CMAKE_PLATFORM_FLAGS[@]}
 make
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
 make test
