@@ -51,6 +51,7 @@ test:
     - pytest-regressions
   source_files:
     - tests
+    - tools
   commands:
     - export OMPI_MCA_plm=isolated                          # [mpi == "openmpi"]
     - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [mpi == "openmpi"]
