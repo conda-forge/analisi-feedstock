@@ -10,6 +10,12 @@ cxx_compiler:
 - vs2017
 fftw:
 - '3'
+mpi:
+- openmpi
+mpich:
+- '4'
+openmpi:
+- '4'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
