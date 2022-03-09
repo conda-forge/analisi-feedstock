@@ -8,23 +8,14 @@ jobs:
     vmImage: windows-2019
   strategy:
     matrix:
-      win_64_mpimpichpython3.7.____cpython:
-        CONFIG: win_64_mpimpichpython3.7.____cpython
+      win_64_python3.7.____cpython:
+        CONFIG: win_64_python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_mpimpichpython3.8.____cpython:
-        CONFIG: win_64_mpimpichpython3.8.____cpython
+      win_64_python3.8.____cpython:
+        CONFIG: win_64_python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_mpimpichpython3.9.____cpython:
-        CONFIG: win_64_mpimpichpython3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mpiopenmpipython3.7.____cpython:
-        CONFIG: win_64_mpiopenmpipython3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mpiopenmpipython3.8.____cpython:
-        CONFIG: win_64_mpiopenmpipython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mpiopenmpipython3.9.____cpython:
-        CONFIG: win_64_mpiopenmpipython3.9.____cpython
+      win_64_python3.9.____cpython:
+        CONFIG: win_64_python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:

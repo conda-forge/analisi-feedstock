@@ -10,12 +10,6 @@ cxx_compiler:
 - vs2017
 fftw:
 - '3'
-mpi:
-- openmpi
-mpich:
-- '4'
-openmpi:
-- '4'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -25,7 +19,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_cpython
+- 3.7.* *_cpython
 python_impl:
 - cpython
 target_platform:
