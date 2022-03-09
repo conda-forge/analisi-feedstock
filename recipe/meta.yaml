@@ -53,11 +53,11 @@ test:
     - tests
     - tools
   commands:
-    - export OMPI_MCA_plm=isolated                          # [mpi == "openmpi"]
-    - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [mpi == "openmpi"]
-    - export OMPI_MCA_rmaps_base_oversubscribe=yes          # [mpi == "openmpi"]
-    - export OMPI_ALLOW_RUN_AS_ROOT=1                       # [mpi == "openmpi"]
-    - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [mpi == "openmpi"]
+    - export OMPI_MCA_plm=isolated                          # [not win and mpi == "openmpi"]
+    - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [not win and mpi == "openmpi"]
+    - export OMPI_MCA_rmaps_base_oversubscribe=yes          # [not win and mpi == "openmpi"]
+    - export OMPI_ALLOW_RUN_AS_ROOT=1                       # [not win and mpi == "openmpi"]
+    - export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1               # [not win and mpi == "openmpi"]
     - analisi_serial --help                                 # [not win]
     - mpiexec -n 1 analisi --help                           # [not win]
     - pytest -sv tests
