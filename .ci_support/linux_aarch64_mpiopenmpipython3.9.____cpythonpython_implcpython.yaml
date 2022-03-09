@@ -5,7 +5,7 @@ boost_cpp:
 c_compiler:
 - gcc
 c_compiler_version:
-- '9'
+- '10'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -17,13 +17,17 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '9'
+- '10'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fftw:
 - '3'
 mpi:
 - openmpi
+mpich:
+- '4'
+openmpi:
+- '4'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
