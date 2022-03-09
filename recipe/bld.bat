@@ -19,7 +19,7 @@ if errorlevel 1 exit 1
 
 :: Install!
 mkdir %SP_DIR%\pyanalisi
-cp pyanalisi* %SP_DIR%\pyanalisi\
-cp ..\pyanalisi\common.py %SP_DIR%\pyanalisi\
-cp ..\pyanalisi\__init__.py %SP_DIR%\pyanalisi\
+copy pyanalisi* %SP_DIR%\pyanalisi\
+copy ..\pyanalisi\common.py %SP_DIR%\pyanalisi\
+copy ..\pyanalisi\__init__.py %SP_DIR%\pyanalisi\
 if errorlevel 1 exit 1
