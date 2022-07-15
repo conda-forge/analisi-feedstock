@@ -4,6 +4,7 @@ ARGS="-DSYSTEM_FFTW3=ON -DSYSTEM_EIGEN3=ON -DSYSTEM_BOOST=ON -DSYSTEM_XDRFILE=ON
 
 
 export SOURCE_DIR=`pwd`
+git submodule update --init --recursive
 mkdir build_serial
 cd build_serial
 cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS ${CMAKE_ARGS}
