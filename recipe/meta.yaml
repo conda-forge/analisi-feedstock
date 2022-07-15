@@ -82,6 +82,9 @@ about:
     and evaluate averages over the ergodic and equilibrated trajectory. 
     Very heavy calculation can be performed in a parallel way using 
     MPI, while multithreading is implemented also in the python interface.
+    Example calculations are Steinhard (averaged) local order parameters,
+    full GK integral calculation with block analysis, traditional mean
+    square displacement and a lot more...
 
   dev_url: https://github.com/rikigigi/analisi
 
