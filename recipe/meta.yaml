@@ -51,6 +51,11 @@ test:
     - pytest
     - pandas
     - pytest-regressions
+    - matplotlib
+    - numpy
+    - scipy
+    - testbook
+    - k3d
   source_files:
     - tests
     - tools
