@@ -1,6 +1,6 @@
 @echo ON
 setlocal enabledelayedexpansion
-
+git submodule update --init --recursive
 mkdir build 
 cd build
 

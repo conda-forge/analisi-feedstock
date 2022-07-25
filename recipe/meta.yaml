@@ -1,14 +1,16 @@
 {% set name = "analisi" %}
-{% set version = "0.4.1" %}
-{% set build = 1 %}
+{% set version = "0.5.0" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/rikigigi/analisi/archive/v{{ version }}.tar.gz
-  sha256: d4ba0e1cd4704c888902c863b38847c03492fcb796f7f960f5fafb4c08bae506
+  git_url: https://github.com/rikigigi/analisi.git
+  git_rev: v{{ version }}
+  git_depth: 1
+
 
 build:
   number: {{ build }}
@@ -49,9 +51,15 @@ test:
     - pytest
     - pandas
     - pytest-regressions
+    - matplotlib
+    - numpy
+    - scipy
+    - testbook
+    - k3d
   source_files:
     - tests
     - tools
+    - notebooks
   commands:
     - export OMPI_MCA_plm=isolated                          # [not win and mpi == "openmpi"]
     - export OMPI_MCA_btl_vader_single_copy_mechanism=none  # [not win and mpi == "openmpi"]
@@ -74,6 +82,9 @@ about:
     and evaluate averages over the ergodic and equilibrated trajectory. 
     Very heavy calculation can be performed in a parallel way using 
     MPI, while multithreading is implemented also in the python interface.
+    Example calculations are Steinhard (averaged) local order parameters,
+    full GK integral calculation with block analysis, traditional mean
+    square displacement and a lot more...
 
   dev_url: https://github.com/rikigigi/analisi
 
