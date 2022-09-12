@@ -1,13 +1,9 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
 boost_cpp:
-- 1.74.0
+- 1.78.0
 c_compiler:
 - gcc
 c_compiler_version:
 - '10'
-cdt_arch:
-- aarch64
 cdt_name:
 - cos7
 channel_sources:
@@ -23,7 +19,7 @@ docker_image:
 fftw:
 - '3'
 mpi:
-- mpich
+- openmpi
 mpich:
 - '4'
 openmpi:
@@ -41,7 +37,7 @@ python:
 python_impl:
 - cpython
 target_platform:
-- linux-aarch64
+- linux-ppc64le
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

@@ -1,5 +1,5 @@
 boost_cpp:
-- 1.74.0
+- 1.78.0
 c_compiler:
 - gcc
 c_compiler_version:
@@ -19,7 +19,7 @@ docker_image:
 fftw:
 - '3'
 mpi:
-- openmpi
+- mpich
 mpich:
 - '4'
 openmpi:
