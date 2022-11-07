@@ -1,11 +1,15 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
 boost_cpp:
-- 1.74.0
+- 1.78.0
 c_compiler:
 - gcc
 c_compiler_version:
 - '10'
+cdt_arch:
+- aarch64
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,7 +23,7 @@ docker_image:
 fftw:
 - '3'
 mpi:
-- mpich
+- openmpi
 mpich:
 - '4'
 openmpi:
@@ -27,8 +31,6 @@ openmpi:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  fftw:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
@@ -37,7 +39,7 @@ python:
 python_impl:
 - cpython
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
