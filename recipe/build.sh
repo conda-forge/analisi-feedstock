@@ -10,7 +10,7 @@ cd build_serial
 cmake ../ -DPYTHON_EXECUTABLE="$PYTHON" $ARGS ${CMAKE_ARGS}
 make
 export BUILD_DIR=`pwd`
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 make test
 fi
 cp -v analisi "$PREFIX/bin/analisi_serial"
