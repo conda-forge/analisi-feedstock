@@ -9,7 +9,7 @@ package:
 source:
   git_url: https://github.com/rikigigi/analisi.git
   git_rev: v{{ version }}
-  git_depth: 1
+  git_depth: 20
 
 
 build:
