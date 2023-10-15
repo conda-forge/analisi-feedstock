@@ -19,7 +19,7 @@ docker_image:
 fftw:
 - '3'
 mpi:
-- openmpi
+- mpich
 mpich:
 - '4'
 openmpi:
@@ -31,7 +31,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.11.* *_cpython
+- 3.12.* *_cpython
 python_impl:
 - cpython
 target_platform:
