@@ -27,7 +27,7 @@ mkdir build_mpi
 cd build_mpi
 cmake ../ -DUSE_MPI=ON -DPYTHON_EXECUTABLE="$PYTHON" $ARGS ${CMAKE_ARGS}
 make
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 make test
 fi
 cp -v analisi "$PREFIX/bin/analisi"
