@@ -1,5 +1,3 @@
-boost_cpp:
-- 1.78.0
 c_compiler:
 - vs2019
 channel_sources:
@@ -10,6 +8,8 @@ cxx_compiler:
 - vs2019
 fftw:
 - '3'
+libboost_devel:
+- '1.82'
 mpi:
 - openmpi
 mpich:
@@ -17,8 +17,6 @@ mpich:
 openmpi:
 - '4'
 pin_run_as_build:
-  boost-cpp:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
