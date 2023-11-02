@@ -22,4 +22,7 @@ mkdir %SP_DIR%\pyanalisi
 copy pyanalisi* %SP_DIR%\pyanalisi\
 copy ..\pyanalisi\common.py %SP_DIR%\pyanalisi\
 copy ..\pyanalisi\__init__.py %SP_DIR%\pyanalisi\
+copy ..\pyanalisi\trajectory.py %SP_DIR%\pyanalisi\
+copy ..\pyanalisi\analysis.py %SP_DIR%\pyanalisi\
+copy ..\pyanalisi\plotters.py %SP_DIR%\pyanalisi\
 if errorlevel 1 exit 1
