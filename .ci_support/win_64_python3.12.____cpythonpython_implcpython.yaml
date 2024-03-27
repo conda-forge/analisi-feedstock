@@ -1,5 +1,7 @@
 c_compiler:
 - vs2019
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
@@ -9,7 +11,7 @@ cxx_compiler:
 fftw:
 - '3'
 libboost_devel:
-- '1.82'
+- '1.84'
 mpi:
 - openmpi
 mpich:
