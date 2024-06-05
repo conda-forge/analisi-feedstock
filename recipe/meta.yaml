@@ -10,6 +10,8 @@ source:
   git_url: https://github.com/rikigigi/analisi.git
   git_rev: v{{ version }}
   git_depth: 20
+  patches:
+    - testbook-timeout.patch
 
 
 build:
@@ -62,11 +64,7 @@ test:
     - tools
     - notebooks
   commands:
-    - export OMPI_MCA_pml=ob1  # [not win and mpi == "openmpi"]
-    - export OMPI_MCA_plm_ssh_agent=false  # [not win and mpi == "openmpi"]
-    - export OMPI_MCA_mpi_yield_when_idle=true  # [not win and mpi == "openmpi"]
-    - export OMPI_MCA_btl_base_warn_component_unused=false  # [not win and mpi == "openmpi"]
-    - export PRTE_MCA_rmaps_default_mapping_policy=:oversubscribe  # [not win and mpi == "openmpi"]
+    - export TESTBOOK_TIMEOUT=900  # [target_platform != build_platform]
     - analisi_serial --help                                 # [not win]
     - mpiexec -n 1 analisi --help                           # [not win]
     - pytest -sv tests
