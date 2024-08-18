@@ -21,7 +21,7 @@ cxx_compiler_version:
 fftw:
 - '3'
 libboost_devel:
-- '1.84'
+- '1.86'
 macos_machine:
 - arm64-apple-darwin20.0.0
 mpi:
