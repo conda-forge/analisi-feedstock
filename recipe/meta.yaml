@@ -1,6 +1,6 @@
 {% set name = "analisi" %}
 {% set version = "0.5.2" %}
-{% set build = 5 %}
+{% set build = 6 %}
 
 package:
   name: {{ name|lower }}
