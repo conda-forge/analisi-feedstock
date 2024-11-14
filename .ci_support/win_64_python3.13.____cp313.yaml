@@ -11,7 +11,7 @@ cxx_compiler:
 fftw:
 - '3'
 libboost_devel:
-- '1.84'
+- '1.86'
 mpi:
 - openmpi
 mpich:

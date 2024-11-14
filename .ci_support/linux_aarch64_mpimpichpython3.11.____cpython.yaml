@@ -11,7 +11,7 @@ c_stdlib_version:
 cdt_arch:
 - aarch64
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -25,7 +25,7 @@ docker_image:
 fftw:
 - '3'
 libboost_devel:
-- '1.84'
+- '1.86'
 mpi:
 - mpich
 mpich:
@@ -45,7 +45,5 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - c_stdlib_version
-  - cdt_name
 - - python
   - python_impl
