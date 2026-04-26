@@ -11,7 +11,7 @@ cxx_compiler:
 fftw:
 - '3'
 libboost_devel:
-- '1.86'
+- '1.90'
 mpi:
 - openmpi
 mpich:
@@ -28,6 +28,3 @@ python_impl:
 - cpython
 target_platform:
 - win-64
-zip_keys:
-- - python
-  - python_impl
